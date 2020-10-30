@@ -83,7 +83,7 @@ public class Fila
      */
     public Fila duplicar() {
         Fila copia = new Fila(this.id, this.fecha.obtenerCopia(),
-        this.ingresos, this.gastos);
+                this.ingresos, this.gastos);
         return copia;
 
     }
@@ -94,15 +94,14 @@ public class Fila
      */
     public String toString() {
         String negativo = "";
-        
+
         if(getBeneficio() < 0){
             negativo = "**" ;
         }
-        
-        return String.format("%8s%15s%14.2f€%14.2f€%14.2f€%2s",
-        id, fecha.toString(), ingresos, gastos, getBeneficio(), negativo);
+
+        return String.format("%8s%15s%14.2f€%14.2f€%14.2f€%3s",
+            id, fecha.toString(), ingresos, gastos, getBeneficio(), negativo);
 
     }
-
 
 }
