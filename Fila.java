@@ -5,7 +5,7 @@
  *  se anotan la fecha, los ingresos y los gastos correspondientes a un
  *  apunte  contable  de una empresa
  * 
- * @author - 
+ * @author - Pedro José Aquerreta
  *  
  */
 public class Fila
@@ -33,7 +33,6 @@ public class Fila
         this.fecha = fecha;
         this.ingresos = ingresos;
         this.gastos = gastos;
-
     }
 
     /**
@@ -41,7 +40,6 @@ public class Fila
      */
     public String getId() {
         return this.id;
-
     }
 
     /**
@@ -49,7 +47,6 @@ public class Fila
      */
     public Fecha getFecha() {
         return this.fecha;
-
     }
 
     /**
@@ -57,7 +54,6 @@ public class Fila
      */
     public double getIngresos() {
         return this.ingresos;
-
     }
 
     /**
@@ -65,7 +61,6 @@ public class Fila
      */
     public double getGastos() {
         return this.gastos;
-
     }
 
     /**
@@ -73,7 +68,6 @@ public class Fila
      */
     public double getBeneficio() {
         return this.ingresos - this.gastos;
-
     }
 
     /**
@@ -85,7 +79,6 @@ public class Fila
         Fila copia = new Fila(this.id, this.fecha.obtenerCopia(),
                 this.ingresos, this.gastos);
         return copia;
-
     }
 
     /**
@@ -94,11 +87,9 @@ public class Fila
      */
     public String toString() {
         String negativo = "";
-
         if(getBeneficio() < 0){
             negativo = "**" ;
         }
-
         return String.format("%8s%15s%14.2f€%14.2f€%14.2f€%3s",
             id, fecha.toString(), ingresos, gastos, getBeneficio(), negativo);
 

@@ -2,7 +2,7 @@
 /**
  *  Clase con código para probar el resto de clases
  * 
- * @author - 
+ * @author - Pedro José Aquerreta
  *  
  */
 public class TestHojaCalculo
@@ -54,7 +54,6 @@ public class TestHojaCalculo
         HojaCalculo copia = test2.duplicarHoja();
         System.out.println(test2.toString());
         System.out.println(copia.toString());
-
     }
 
     /**
@@ -72,7 +71,6 @@ public class TestHojaCalculo
         HojaCalculo copia = test3.duplicarHoja();
         System.out.println(test3.toString());
         System.out.println(copia.toString());
-
     }
 
 }

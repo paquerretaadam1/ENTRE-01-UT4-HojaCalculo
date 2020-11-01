@@ -2,14 +2,13 @@
 /**
  *  Modela una fecha
  *  
- *  @author - 
+     *  @author - Pedro José Aquerreta
  */
 public class Fecha
 {
     private int dia;
     private int mes;
     private int año;
-
     /**
      * constructor  
      */
@@ -18,7 +17,6 @@ public class Fecha
         this.dia = dia;
         this.mes = mes;
         this.año = año;
-
     }   
 
     /**
@@ -75,15 +73,13 @@ public class Fecha
     public Fecha obtenerCopia() {
         Fecha copia = new Fecha(this.dia, this.mes, this.año);
         return copia;
-
     }
 
     /**
      * 
      */
     public String toString() {
-        return this.dia + "/"  + this.mes+ "/" + this.año;
-
+        return this.dia + "/"  + this.mes + "/" + this.año;
     }
 
 }

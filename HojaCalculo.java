@@ -5,7 +5,7 @@
  *  En cada fila la empresa "apunta" los ingresos y gastos en 
  *  una determinada fecha
  * 
- * @author -   
+ * @author - Pedro José Aquerreta  
  *  
  */
 public class HojaCalculo
@@ -26,7 +26,6 @@ public class HojaCalculo
         this.fila1 = null;
         this.fila2 = null;
         this.fila3 = null;
-
     }
 
     /**
@@ -34,7 +33,6 @@ public class HojaCalculo
      */
     public String getNombre() {
         return this.nombre;
-
     }
 
     /**
@@ -42,7 +40,6 @@ public class HojaCalculo
      */
     public Fila getFila1() {
         return fila1;
-
     }
 
     /**
@@ -50,7 +47,6 @@ public class HojaCalculo
      */
     public Fila getFila2() {
         return fila2;
-
     }
 
     /**
@@ -58,7 +54,6 @@ public class HojaCalculo
      */
     public Fila getFila3() {
         return fila3;
-
     }
 
     /**
@@ -67,13 +62,13 @@ public class HojaCalculo
      */
     public int getNumeroFilas() {
         int numeroFilas = 0;
-        if(fila1 == null){
+        if(this.fila1 == null){
             numeroFilas = 3;
         }
-        else if(fila2 == null){
+        else if(this.fila2 == null){
             numeroFilas = 2;
         }
-        else if(fila3 == null){
+        else if(this.fila3 == null){
             numeroFilas = 1;
         }
         return numeroFilas;
@@ -90,7 +85,6 @@ public class HojaCalculo
             hojaCompleta = true;
         }
         return true;
-
     }
 
     /**
@@ -127,7 +121,6 @@ public class HojaCalculo
      * todas las filas que incluye la hoja
      */
     public double getTotalIngresos() {
-
         double totalIngresos = 0;
         switch(getNumeroFilas()){
             case 0: totalIngresos += fila3.getIngresos();
@@ -166,7 +159,6 @@ public class HojaCalculo
             break;
         }
         return beneficio;
-
     }
 
     /**
@@ -179,6 +171,7 @@ public class HojaCalculo
             case 0: filas += String.format("\n%60s", fila3);
             case 1: filas = String.format("\n%60s", fila2) + filas;
             case 2: filas = String.format("\n%60s", fila1) + filas;
+            break;
         }
         return String.format("%s\n%23s%15s%15s%15s" +
             "\n%180s" + 
