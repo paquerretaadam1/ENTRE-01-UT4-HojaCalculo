@@ -62,14 +62,14 @@ public class HojaCalculo
      */
     public int getNumeroFilas() {
         int numeroFilas = 0;
-        if(this.fila1 == null){
-            numeroFilas = 3;
+        if(this.fila1 != null){
+            numeroFilas++;
         }
-        else if(this.fila2 == null){
-            numeroFilas = 2;
+        if(this.fila2 != null){
+            numeroFilas++;
         }
-        else if(this.fila3 == null){
-            numeroFilas = 1;
+        if(this.fila3 != null){
+            numeroFilas++;
         }
         return numeroFilas;
 
@@ -95,14 +95,14 @@ public class HojaCalculo
      */
     public void addFila(Fila fila) {
         switch (getNumeroFilas()){
-            case 0: System.out.println(fila.getId() + " no se puede añadir en "
+            case 3: System.out.println(fila.getId() + " no se puede añadir en "
                 + this.nombre);
             break;
-            case 1: this.fila3 = fila;
+            case 2: this.fila3 = fila;
             break;
-            case 2: this.fila2 = fila;
+            case 1: this.fila2 = fila;
             break;
-            case 3: this.fila1 = fila;
+            case 0: this.fila1 = fila;
             break;
         }
     }
@@ -123,9 +123,9 @@ public class HojaCalculo
     public double getTotalIngresos() {
         double totalIngresos = 0;
         switch(getNumeroFilas()){
-            case 0: totalIngresos += fila3.getIngresos();
-            case 1: totalIngresos += fila2.getIngresos();
-            case 2: totalIngresos += fila1.getIngresos();
+            case 3: totalIngresos += fila3.getIngresos();
+            case 2: totalIngresos += fila2.getIngresos();
+            case 1: totalIngresos += fila1.getIngresos();
             break;
         }
         return totalIngresos;
@@ -138,9 +138,9 @@ public class HojaCalculo
     public double getTotalGastos() {
         double totalGastos = 0;
         switch(getNumeroFilas()){
-            case 0: totalGastos += fila3.getGastos();
-            case 1: totalGastos += fila2.getGastos();
-            case 2: totalGastos += fila1.getGastos();
+            case 3: totalGastos += fila3.getGastos();
+            case 2: totalGastos += fila2.getGastos();
+            case 1: totalGastos += fila1.getGastos();
             break;
         }
         return totalGastos;
@@ -153,9 +153,9 @@ public class HojaCalculo
     public double getBeneficio() {
         double beneficio = 0;
         switch(getNumeroFilas()){
-            case 0: beneficio += fila3.getBeneficio();
-            case 1: beneficio += fila2.getBeneficio();
-            case 2: beneficio += fila1.getBeneficio();
+            case 3: beneficio += fila3.getBeneficio();
+            case 2: beneficio += fila2.getBeneficio();
+            case 1: beneficio += fila1.getBeneficio();
             break;
         }
         return beneficio;
@@ -168,9 +168,9 @@ public class HojaCalculo
     public String toString() {
         String filas = "";
         switch(getNumeroFilas()){
-            case 0: filas += String.format("\n%60s", fila3);
-            case 1: filas = String.format("\n%60s", fila2) + filas;
-            case 2: filas = String.format("\n%60s", fila1) + filas;
+            case 3: filas += String.format("\n%60s", fila3);
+            case 2: filas = String.format("\n%60s", fila2) + filas;
+            case 1: filas = String.format("\n%60s", fila1) + filas;
             break;
         }
         return String.format("%s\n%23s%15s%15s%15s" +
